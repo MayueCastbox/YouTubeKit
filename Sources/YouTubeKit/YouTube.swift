@@ -16,7 +16,7 @@ public class YouTube {
     private static var __js: String? // caches js between calls
     private static var __jsURL: URL?
     
-    private var _videoInfo: InnerTube.VideoInfo?
+    public private(set) var _videoInfo: InnerTube.VideoInfo?
     
     private var _watchHTML: String?
     private var _embedHTML: String?

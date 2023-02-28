@@ -21,6 +21,8 @@ public struct Stream {
     public let averageBitrate: Int?
     public let isDash: Bool
     
+    public let approxDurationMs: String?
+    public let qualityLabel: String?
     private let filesize: Int?
     
     init(format: InnerTube.StreamingData.Format) throws {
@@ -42,6 +44,9 @@ public struct Stream {
         self.filesize = format.contentLength.flatMap { Int($0) }
         
         self.isDash = itag.isDash
+        
+        self.approxDurationMs = format.approxDurationMs
+        self.qualityLabel = format.qualityLabel
     }
     
     /// whether the stream is DASH
